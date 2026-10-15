@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-test:
+    name: Python Engine Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run Python Unit Tests (Stdlib)
+        run: |
+          python -m unittest discover -s tests -v
+
+      - name: Verify Anomaly Engine Demo
+        run: |
+          python anomaly_engine.py --demo
+
+      - name: Verify Examples
+        run: |
+          python examples/csv_example.py --demo
+          python examples/stream_example.py
+
+  frontend-build:
+    name: Frontend React Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: skyguard-app/package-lock.json
+
+      - name: Install Frontend Dependencies
+        working-directory: skyguard-app
+        run: npm ci
+
+      - name: Build Dashboard
+        working-directory: skyguard-app
+        run: npm run build

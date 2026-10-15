@@ -1,0 +1,59 @@
+name: Bug Report
+description: Create a report to help us fix an issue or defect
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug in SkyGuard AI!
+  - type: input
+    id: version
+    attributes:
+      label: SkyGuard AI Version / Commit
+      description: What version or commit hash of the project are you using?
+      placeholder: e.g., main branch commit a1b2c3d
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      options:
+        - Anomaly Detection Engine (anomaly_engine.py)
+        - Edge Gateway / REST API (gateway/server.py)
+        - React Dashboard (skyguard-app/)
+        - Edge Firmware (ESP32 / BME280)
+        - Documentation / Tests
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the issue.
+      placeholder: |
+        1. Run '...'
+        2. Send payload '...'
+        3. Observe error '...'
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Screenshots
+      description: Paste any error traceback or attach relevant screenshots.
+      render: shell

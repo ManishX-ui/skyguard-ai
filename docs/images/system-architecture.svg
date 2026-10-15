@@ -1,0 +1,334 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" style="background:#0b1120;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="hwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gatewayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0369a1" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="engineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="uiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="offlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ca8a04" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrow-sky" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#818cf8" />
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2dd4bf" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fbbf24" />
+    </marker>
+
+    <!-- Shadows -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="820" fill="url(#bgGrad)" />
+  <rect width="1200" height="820" fill="none" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Header Section -->
+  <g transform="translate(40, 36)">
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="#0284c7" />
+    <path d="M 18 8 L 28 14 L 28 24 L 18 30 L 8 24 L 8 14 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" />
+    <circle cx="18" cy="19" r="4" fill="#38bdf8" />
+    
+    <text x="48" y="22" font-size="20" font-weight="700" fill="#f8fafc" letter-spacing="0.5">SkyGuard AI System Architecture</text>
+    <text x="48" y="38" font-size="12" font-weight="400" fill="#94a3b8">End-to-End Real-Time AWS Sensor Ingestion, 5-Layer Hybrid Anomaly Detection &amp; Observability</text>
+    
+    <rect x="980" y="6" width="180" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <circle cx="994" cy="19" r="4" fill="#22c55e" />
+    <text x="1006" y="23" font-size="11" font-weight="500" fill="#cbd5e1">SIH Problem Statement 73</text>
+  </g>
+
+  <!-- ================= LAYER 1: DATA SOURCES / HARDWARE (LEFT COLUMN) ================= -->
+  <g transform="translate(40, 100)" filter="url(#cardShadow)">
+    <rect width="250" height="490" rx="12" fill="url(#hwGrad)" stroke="#334155" stroke-width="1.5" />
+    <rect width="250" height="38" rx="12" fill="#1e293b" />
+    <rect y="26" width="250" height="12" fill="#1e293b" />
+    <text x="16" y="24" font-size="13" font-weight="700" fill="#38bdf8" letter-spacing="0.5">1. SENSOR &amp; TELEMETRY SOURCES</text>
+
+    <!-- Node A: ESP32 AWS -->
+    <g transform="translate(14, 52)">
+      <rect width="222" height="94" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f1f5f9">ESP32 Edge AWS Node</text>
+      <text x="12" y="38" font-size="10.5" fill="#94a3b8">• BME280 (I2C Bus: 0x76 / 0x77)</text>
+      <text x="12" y="54" font-size="10.5" fill="#94a3b8">• Temp (°C), Humidity (%), Baro (hPa)</text>
+      <text x="12" y="70" font-size="10.5" fill="#94a3b8">• WiFi HTTP / MQTT JSON Ingestion</text>
+      <rect x="156" y="74" width="54" height="14" rx="3" fill="#0369a1" />
+      <text x="161" y="84" font-size="8.5" font-weight="600" fill="#ffffff">HARDWARE</text>
+    </g>
+
+    <!-- Node B: External Historical / Synoptic Feeds -->
+    <g transform="translate(14, 158)">
+      <rect width="222" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f1f5f9">Synoptic Meteorological Feeds</text>
+      <text x="12" y="38" font-size="10.5" fill="#94a3b8">• IMD Automatic Weather Stations (128+)</text>
+      <text x="12" y="54" font-size="10.5" fill="#94a3b8">• NOAA Integrated Surface Database</text>
+      <text x="12" y="70" font-size="10.5" fill="#94a3b8">• ECMWF ERA5 Atmospheric Reanalysis</text>
+      <rect x="154" y="76" width="56" height="14" rx="3" fill="#334155" />
+      <text x="160" y="86" font-size="8.5" font-weight="600" fill="#94a3b8">SYNOPTIC</text>
+    </g>
+
+    <!-- Node C: Synthetic Fault Simulator -->
+    <g transform="translate(14, 266)">
+      <rect width="222" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f1f5f9">Simulation &amp; Fault Generator</text>
+      <text x="12" y="38" font-size="10.5" fill="#94a3b8">• Injects Spikes, Drift &amp; Freezes</text>
+      <text x="12" y="54" font-size="10.5" fill="#94a3b8">• Barometric Drops &amp; Comm Dropouts</text>
+      <text x="12" y="70" font-size="10.5" fill="#94a3b8">• 72h-168h Accelerated Time Series</text>
+      <rect x="158" y="76" width="52" height="14" rx="3" fill="#334155" />
+      <text x="164" y="86" font-size="8.5" font-weight="600" fill="#94a3b8">TESTING</text>
+    </g>
+
+    <!-- Node D: Live Weather API -->
+    <g transform="translate(14, 374)">
+      <rect width="222" height="88" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f1f5f9">Open-Meteo Realtime API</text>
+      <text x="12" y="38" font-size="10.5" fill="#94a3b8">• Live spatial coordinate fallback</text>
+      <text x="12" y="54" font-size="10.5" fill="#94a3b8">• Hourly observations &amp; 7-day forecast</text>
+      <text x="12" y="70" font-size="10.5" fill="#94a3b8">• Dynamic district-level grounding</text>
+      <rect x="160" y="68" width="50" height="14" rx="3" fill="#0f766e" />
+      <text x="166" y="78" font-size="8.5" font-weight="600" fill="#ccfbf1">API FEED</text>
+    </g>
+  </g>
+
+  <!-- ================= LAYER 2: EDGE GATEWAY (MIDDLE-LEFT) ================= -->
+  <g transform="translate(320, 100)" filter="url(#cardShadow)">
+    <rect width="260" height="490" rx="12" fill="url(#gatewayGrad)" stroke="#0284c7" stroke-width="1.5" />
+    <rect width="260" height="38" rx="12" fill="#0369a1" fill-opacity="0.5" />
+    <rect y="26" width="260" height="12" fill="#0369a1" fill-opacity="0.5" />
+    <text x="16" y="24" font-size="13" font-weight="700" fill="#bae6fd" letter-spacing="0.5">2. EDGE GATEWAY &amp; PERSISTENCE</text>
+
+    <!-- Component A: Ingest REST Server -->
+    <g transform="translate(14, 52)">
+      <rect width="232" height="106" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#38bdf8">Ingestion Engine (Python stdlib)</text>
+      <text x="12" y="36" font-size="10.5" fill="#cbd5e1">ThreadingHTTPServer (:3101)</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• POST /api/edge/ingest</text>
+      <text x="12" y="68" font-size="10" fill="#94a3b8">• POST /api/edge/simulate</text>
+      <text x="12" y="82" font-size="10" fill="#94a3b8">• GET /api/edge/latest &amp; /history</text>
+      <text x="12" y="96" font-size="10" fill="#94a3b8">• GET /api/edge/stream (SSE Broadcast)</text>
+    </g>
+
+    <!-- Component B: Input Validation Layer -->
+    <g transform="translate(14, 170)">
+      <rect width="232" height="88" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Data Sanitization &amp; Validation</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Timestamp ISO-8601 Verification</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Station ID token validation</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• NaN / Missing Value Tagging</text>
+      <text x="12" y="84" font-size="10" fill="#94a3b8">• Bounds check against physical limits</text>
+    </g>
+
+    <!-- Component C: Persistence Store -->
+    <g transform="translate(14, 270)">
+      <rect width="232" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Edge SQLite Storage (edge.db)</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Indexed (station_id, timestamp)</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Fast rolling lookback queries</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Verdict, Score &amp; Root-Cause Audit</text>
+      <text x="12" y="86" font-size="10" fill="#94a3b8">• Automated backpressure management</text>
+    </g>
+
+    <!-- Component D: Alert Dispatcher -->
+    <g transform="translate(14, 378)">
+      <rect width="232" height="84" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Alerting &amp; Notification Manager</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• SMTP Email Notifications</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Webhook POST alerts / Incident log</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• SSE Realtime Push to React WebUI</text>
+    </g>
+  </g>
+
+  <!-- ================= LAYER 3: 5-LAYER ANOMALY ENGINE (MIDDLE-RIGHT) ================= -->
+  <g transform="translate(610, 100)" filter="url(#cardShadow)">
+    <rect width="270" height="490" rx="12" fill="url(#engineGrad)" stroke="#6366f1" stroke-width="1.5" />
+    <rect width="270" height="38" rx="12" fill="#4338ca" fill-opacity="0.4" />
+    <rect y="26" width="270" height="12" fill="#4338ca" fill-opacity="0.4" />
+    <text x="16" y="24" font-size="13" font-weight="700" fill="#c7d2fe" letter-spacing="0.5">3. 5-LAYER ANOMALY DETECTION</text>
+
+    <!-- L1 -->
+    <g transform="translate(14, 50)">
+      <rect width="242" height="64" rx="6" fill="#0f172a" stroke="#4f46e5" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#818cf8">L1: Physical Plausibility (w=0.25)</text>
+      <text x="10" y="34" font-size="9.5" fill="#94a3b8">Range limits: T(-10..60°C), H(0..100%), P(870..1084)</text>
+      <text x="10" y="50" font-size="9.5" fill="#94a3b8">NaN / Comm dropout penalty (+0.35 score)</text>
+    </g>
+
+    <!-- L2 -->
+    <g transform="translate(14, 122)">
+      <rect width="242" height="68" rx="6" fill="#0f172a" stroke="#4f46e5" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#818cf8">L2: Temporal Learning (w=0.30)</text>
+      <text x="10" y="34" font-size="9.5" fill="#94a3b8">EWMA baseline (α=0.15) + Hour-of-day seasonal mean</text>
+      <text x="10" y="50" font-size="9.5" fill="#94a3b8">MAD robust spread + Step limits (8°C, 25%RH, 6hPa)</text>
+    </g>
+
+    <!-- L3 -->
+    <g transform="translate(14, 198)">
+      <rect width="242" height="68" rx="6" fill="#0f172a" stroke="#4f46e5" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#818cf8">L3: Spatial Consistency (w=0.25)</text>
+      <text x="10" y="34" font-size="9.5" fill="#94a3b8">Radius cross-check (r=0.35° ≈ 38km, min 2 neighbors)</text>
+      <text x="10" y="50" font-size="9.5" fill="#94a3b8">Trimmed-mean spatial delta + Barometric gradient</text>
+    </g>
+
+    <!-- L4 -->
+    <g transform="translate(14, 274)">
+      <rect width="242" height="76" rx="6" fill="#0f172a" stroke="#4f46e5" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#818cf8">L4: Multivariate Physics (w=0.20)</text>
+      <text x="10" y="34" font-size="9.5" fill="#94a3b8">T/RH Dewpoint coherence (Magnus-Tetens formula)</text>
+      <text x="10" y="50" font-size="9.5" fill="#94a3b8">Frozen sensor detection (8+ repeated consecutive)</text>
+      <text x="10" y="66" font-size="9.5" fill="#94a3b8">Barometric-diurnal pressure coupling</text>
+    </g>
+
+    <!-- L5 -->
+    <g transform="translate(14, 358)">
+      <rect width="242" height="106" rx="6" fill="#0f172a" stroke="#a855f7" stroke-width="1" />
+      <text x="10" y="18" font-size="11" font-weight="700" fill="#c084fc">L5: Explainable AI &amp; Output Attribution</text>
+      <text x="10" y="34" font-size="9.5" fill="#94a3b8">SHAP-style additive attribution per parameter</text>
+      <text x="10" y="50" font-size="9.5" fill="#94a3b8">Root cause classification (spike, drift, freeze, etc.)</text>
+      <text x="10" y="66" font-size="9.5" fill="#94a3b8">Confidence %, Corrected values &amp; Sensor Health</text>
+      <text x="10" y="82" font-size="9.5" fill="#94a3b8">Maintenance ETA &amp; Actionable operator guidance</text>
+    </g>
+  </g>
+
+  <!-- ================= LAYER 4: PRESENTATION / DASHBOARD (RIGHT COLUMN) ================= -->
+  <g transform="translate(910, 100)" filter="url(#cardShadow)">
+    <rect width="250" height="490" rx="12" fill="url(#uiGrad)" stroke="#0d9488" stroke-width="1.5" />
+    <rect width="250" height="38" rx="12" fill="#0f766e" fill-opacity="0.4" />
+    <rect y="26" width="250" height="12" fill="#0f766e" fill-opacity="0.4" />
+    <text x="16" y="24" font-size="13" font-weight="700" fill="#99f6e4" letter-spacing="0.5">4. REACT DASHBOARD &amp; UI</text>
+
+    <!-- View A: Overview & 3D Hero -->
+    <g transform="translate(14, 52)">
+      <rect width="222" height="84" rx="8" fill="#0f172a" stroke="#0d9488" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#2dd4bf">Overview &amp; Telemetry</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• 3D Atmosphere Canvas (Three.js)</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Real-time health gauges &amp; KPI metrics</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Live active alerts stream &amp; status cards</text>
+    </g>
+
+    <!-- View B: Geospatial Station Map -->
+    <g transform="translate(14, 146)">
+      <rect width="222" height="84" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Station Network Map</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Leaflet / MapLibre GIS visualization</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• 128+ IMD AWS pinned stations</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Color-coded sensor health pins</text>
+    </g>
+
+    <!-- View C: Anomaly Explorer -->
+    <g transform="translate(14, 240)">
+      <rect width="222" height="88" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Anomaly Triage &amp; Root Cause</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Filter by severity (Critical/Warning)</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Fault classification tags (Spike/Drift)</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Detailed attribution &amp; human evidence</text>
+    </g>
+
+    <!-- View D: Analytics & Trends -->
+    <g transform="translate(14, 338)">
+      <rect width="222" height="126" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="12" font-weight="700" fill="#f8fafc">Analytics &amp; Historical Trends</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Interactive Recharts multi-series</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Diurnal cycle comparison</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Confidence distribution histograms</text>
+      <text x="12" y="86" font-size="10" fill="#94a3b8">• CSV data export &amp; audit reports</text>
+      <text x="12" y="102" font-size="10" fill="#94a3b8">• Edge nodes manager &amp; simulator</text>
+    </g>
+  </g>
+
+  <!-- ================= OFFLINE WORKFLOW: DATASET & BENCHMARKING (BOTTOM BAR) ================= -->
+  <g transform="translate(40, 610)" filter="url(#cardShadow)">
+    <rect width="1120" height="160" rx="12" fill="url(#offlineGrad)" stroke="#d97706" stroke-width="1.5" />
+    <rect width="1120" height="34" rx="12" fill="#b45309" fill-opacity="0.3" />
+    <rect y="22" width="1120" height="12" fill="#b45309" fill-opacity="0.3" />
+    <text x="16" y="22" font-size="13" font-weight="700" fill="#fde68a" letter-spacing="0.5">OFFLINE DATASET PREPARATION, FAULT INJECTION &amp; BENCHMARK EVALUATION WORKFLOW</text>
+
+    <!-- Step 1 -->
+    <g transform="translate(20, 48)">
+      <rect width="248" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#fde68a">Step 1: Dataset Acquisition</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• IMD AWS Raw Portal CSVs</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• NOAA ISD Synoptic Observations</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• ERA5 Reanalysis Atmospheric Data</text>
+      <text x="12" y="86" font-size="9.5" fill="#f59e0b">scripts/ingest_*.py</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(296, 48)">
+      <rect width="248" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#fde68a">Step 2: Ground-Truth Faults</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Calibrated synthetic anomaly generator</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Spikes, freeze, drift, comms loss</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Chronological evaluation split</text>
+      <text x="12" y="86" font-size="9.5" fill="#f59e0b">scripts/inject_faults.py</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(572, 48)">
+      <rect width="248" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#fde68a">Step 3: Threshold Tuning</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• Calibrate layer weights (L1-L4)</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• Optimize Z-score &amp; MAD windows</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Zero false positives on clean baselines</text>
+      <text x="12" y="86" font-size="9.5" fill="#f59e0b">docs/EVALUATION.md</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(848, 48)">
+      <rect width="250" height="96" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="20" font-size="11.5" font-weight="700" fill="#fde68a">Step 4: Continuous Verification</text>
+      <text x="12" y="38" font-size="10" fill="#94a3b8">• 29 Unit Tests across edge cases</text>
+      <text x="12" y="54" font-size="10" fill="#94a3b8">• CI GitHub Actions Automated testing</text>
+      <text x="12" y="70" font-size="10" fill="#94a3b8">• Gateway smoke test &amp; backfill test</text>
+      <text x="12" y="86" font-size="9.5" fill="#f59e0b">tests/test_anomaly_engine.py</text>
+    </g>
+  </g>
+
+  <!-- ================= CONNECTING ARROWS ================= -->
+  <!-- Layer 1 to Layer 2 -->
+  <line x1="290" y1="210" x2="314" y2="210" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-sky)" />
+  <line x1="290" y1="380" x2="314" y2="380" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-sky)" />
+  <text x="294" y="198" font-size="9" fill="#7dd3fc" text-anchor="middle">HTTP/JSON</text>
+
+  <!-- Layer 2 to Layer 3 -->
+  <line x1="580" y1="230" x2="604" y2="230" stroke="#818cf8" stroke-width="2.5" marker-end="url(#arrow-indigo)" />
+  <line x1="604" y1="360" x2="584" y2="360" stroke="#818cf8" stroke-width="2" stroke-dasharray="4" marker-end="url(#arrow-indigo)" />
+  <text x="595" y="218" font-size="9" fill="#c7d2fe" text-anchor="middle">Telemetry</text>
+  <text x="595" y="352" font-size="9" fill="#c7d2fe" text-anchor="middle">History</text>
+
+  <!-- Layer 2 & 3 to Layer 4 -->
+  <line x1="880" y1="260" x2="904" y2="260" stroke="#2dd4bf" stroke-width="2.5" marker-end="url(#arrow-teal)" />
+  <line x1="880" y1="410" x2="904" y2="410" stroke="#2dd4bf" stroke-width="2.5" marker-end="url(#arrow-teal)" />
+  <text x="895" y="248" font-size="9" fill="#99f6e4" text-anchor="middle">Verdicts</text>
+  <text x="895" y="398" font-size="9" fill="#99f6e4" text-anchor="middle">SSE Stream</text>
+
+  <!-- Offline loop arrow up into engine -->
+  <path d="M 700 610 L 700 594" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrow-amber)" />
+  <text x="735" y="602" font-size="9" fill="#fde68a">Tuned Parameters</text>
+
+</svg>
